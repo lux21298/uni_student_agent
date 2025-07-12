@@ -87,6 +87,9 @@ importers:
       eslint-config-next:
         specifier: 15.1.0
         version: 15.1.0(eslint@8.57.1)(typescript@5.8.3)
+      git:
+        specifier: ^0.1.5
+        version: 0.1.5
       jest:
         specifier: ^30.0.4
         version: 30.0.4(@types/node@20.19.7)
@@ -2106,6 +2109,10 @@ packages:
   getpass@0.1.7:
     resolution: {integrity: sha512-0fzj9JxOLfJ+XGLhR8ze3unN0KZCgZwiSSDz168VERjK8Wl8kVSdcu2kspd4s4wtAa1y/qrVRiAA0WclVsu0ng==}
 
+  git@0.1.5:
+    resolution: {integrity: sha512-N+bfOrXyKMU/fQtCj6D/U9MQOEN0DAA8TLHSLdUQRSWBOkeRvsjJHdrdkvcq05xO7GSDKWc3nDEGoTZ4DfCCSg==}
+    engines: {node: '>=0.4.0'}
+
   glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
     engines: {node: '>= 6'}
@@ -2784,6 +2791,9 @@ packages:
   mime-types@3.0.1:
     resolution: {integrity: sha512-xRc4oEhT6eaBpU1XF7AjpOFD+xQmXNB5OVKwp4tqCuBpHLS/ZbBDrc07mYTDqVMg6PfxUjjNp85O6Cd2Z/5HWA==}
     engines: {node: '>= 0.6'}
+
+  mime@1.2.9:
+    resolution: {integrity: sha512-WiLgbHTIq5AYUvU/Luli4mZ1bUcHpGNHyCsbl+KPMg4zt+XUDpQehWjuBjdLaEvDTinvKj/FgfQt3fPoT7j08g==}
 
   mimic-fn@2.1.0:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
@@ -6205,6 +6215,10 @@ snapshots:
     dependencies:
       assert-plus: 1.0.0
 
+  git@0.1.5:
+    dependencies:
+      mime: 1.2.9
+
   glob-parent@5.1.2:
     dependencies:
       is-glob: 4.0.3
@@ -7088,6 +7102,8 @@ snapshots:
   mime-types@3.0.1:
     dependencies:
       mime-db: 1.54.0
+
+  mime@1.2.9: {}
 
   mimic-fn@2.1.0: {}
 
