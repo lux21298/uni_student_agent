@@ -1,5 +1,6 @@
 import { z } from "zod"
 import { createMcpHandler } from "@vercel/mcp-adapter"
+import { getBaseUrl } from "@/lib/config"
 
 // Mock student data - this would normally come from a database
 const mockStudentData = {
@@ -93,8 +94,13 @@ const mockStudentData = {
 }
 
 // Create the MCP handler
+// Get the base URL for the MCP server
+const baseUrl = getBaseUrl()
+
 const handler = createMcpHandler(
   (server) => {
+    // Configure server URL
+    server.baseUrl(baseUrl)
     // Get student profile and academic progress
     server.tool(
       "get_student_profile",
@@ -564,7 +570,10 @@ ${remainingCredits === 0 ? "🎉 Ready to graduate! Contact student services to 
     )
   },
   {},
-  { basePath: "/api" },
+  { 
+    basePath: "/api",
+    baseUrl: getBaseUrl()
+  },
 )
 
 export { handler as GET, handler as POST, handler as DELETE }
